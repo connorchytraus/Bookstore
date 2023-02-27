@@ -15,9 +15,7 @@ namespace Bookstore.Infrastructure
     [HtmlTargetElement("div", Attributes = "page-blah")]
     public class PaginationTagHelper : TagHelper
     {
-
         private IUrlHelperFactory uhf;
-
         public PaginationTagHelper (IUrlHelperFactory temp)
         {
             uhf = temp;
@@ -40,7 +38,7 @@ namespace Bookstore.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageBlah.TotalPages; i++)
+            for (int i = 1; i <= PageBlah.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
 

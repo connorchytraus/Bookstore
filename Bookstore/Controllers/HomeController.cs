@@ -18,7 +18,8 @@ namespace Bookstore.Controllers
         }
         public IActionResult Index(int pageNum = 1)
         {
-            int pageSize = 5;
+            int pageSize = 10;
+            int numBooks = repo.Books.Count();
 
             var x = new BooksViewModel
             {
@@ -29,7 +30,7 @@ namespace Bookstore.Controllers
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = numBooks,
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }
