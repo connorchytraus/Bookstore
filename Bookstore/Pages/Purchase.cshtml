@@ -1,0 +1,50 @@
+﻿@page
+@model Bookstore.Pages.PurchaseModel
+@{
+}
+<h2>Cart</h2>
+<table class="table table-bordered table-striped table-hover table-info">
+    <thead>
+        <tr class="active">
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    @*display the totals and everything in the cart*@
+    <tbody>
+        @foreach(var i in Model.cart.Items)
+            {
+                <tr>
+                    <td>@i.Book.Title</td>
+                    <td>@i.Quantity</td>
+                    <td>@i.Book.Price</td>
+                    <td>@(i.Quantity * i.Book.Price)</td>
+                </tr>
+            }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="3">Total:</td>
+            <td>@Model.cart.CalculateTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>
+<br /><br />
+
+<!--youtube video is embedded here-->
+<div class="row">
+    <div class="col-sm-6">
+        <!-- 16:9 -->
+        <h4>Why Reading is Important</h4>
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/6ibCtsHgz3Y"></iframe>
+        </div>
+    </div>
+</div>
