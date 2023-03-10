@@ -10,6 +10,8 @@
             @Model.CalculateTotal().ToString("c")
         </small>
     }
+
+    @*copied this cart icon code from boostrap because the books is outdated*@
 <a class="btn btn-sm btn-secondary navbar-btn" asp-page="/Purchase"
    asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
