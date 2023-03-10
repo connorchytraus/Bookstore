@@ -45,6 +45,9 @@ namespace Bookstore
             //get the new basket for each session
             services.AddScoped<Cart>(x => SessionCart.GetCart(x));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            //set up services for the checkout process
+            services.AddScoped<IPurchaseRepository, EFPurchaseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

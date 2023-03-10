@@ -15,19 +15,19 @@ namespace Bookstore.Models
         [BindNever]
         public ICollection<CartLineItem> Lines { get; set; }
 
-        [Required(ErrorMessage ="Please enter a name:")]
+        [Required(ErrorMessage ="Please enter a name")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Please enter a valid address:")]
+        [Required(ErrorMessage = "Please enter a valid address")]
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
         public string AddressLine3 { get; set; }
-        [Required(ErrorMessage = "Please enter a city:")]
+        [Required(ErrorMessage = "Please enter a city")]
         public string City { get; set; }
-        [Required(ErrorMessage = "Please enter a state:")]
+        [Required(ErrorMessage = "Please enter a state")]
         public string State { get; set; }
-        [Required(ErrorMessage = "Please enter a zipcode:")]
+        [Required(ErrorMessage = "Please enter a zipcode")]
         public string Zip { get; set; }
-        [Required(ErrorMessage = "Please enter a country:")]
+        [Required(ErrorMessage = "Please enter a country")]
         public string Country { get; set; }
         public bool Gift { get; set; }
     }
